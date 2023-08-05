@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+  
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+  
+.puzzle-piece {
+    width: 80px;
+    height: 80px;
+    background-color: #ffcc80; /* Cor mais clara para as peças */
+    border: 2px solid #ffb74d; /* Borda mais espessa */
+    border-radius: 10px; /* Borda arredondada */
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: move;
+    transition: all 0.2s ease; /* Efeito de transição suave para hover */
+}
+  
+.puzzle-piece:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+  
+.target-box {
+    width: 250px;
+    height: 100px;
+    background-color: #bbdefb; /* Cor da caixa de destino */
+    border: 2px dashed #64b5f6; /* Borda tracejada */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+  
+.target-box.success {
+    background-color: #c8e6c9;
+    border-color: #4caf50;
+}
+  
+.transition {
+    transition: all 0.2s ease;
+}
+  
+.success-message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4caf50;
+    font-weight: bold;
+}
+/* Adicionando uma animação para quando a peça é solta na caixa de destino */
+.target-box.drop-animation {
+    animation: dropEffect 0.5s ease;
+}
+  
+@keyframes dropEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+  
